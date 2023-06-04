@@ -82,7 +82,6 @@ def parse_page(url):
     findThemes(soup)
     responseDomains[domain] = {'wordPress': wordPress, 'plugins':plugins, 'themes': themes}
     
-
 find_subdomain("graphworld.ru", "tiny")
 for domain in subDomainsHttp:
     parse_page(domain)

@@ -18,7 +18,6 @@ subDomainsHttps = []
 responseDomains = {}
 
 
-
 @bot.message_handler(commands=['start'])
 def main(message):
   bot.send_message(message.chat.id, 'tool - инструмент, который позволяет от исходного домена перемещаться по поддоменам и сканировать порты.')
@@ -134,12 +133,6 @@ def get_domain_parse(message):
          parse_page(domain)
       for domain in responseDomains:
         bot.send_message(message.chat.id, f"Домен: {domain} \n {responseDomains[domain]['wordPress']}  \n {responseDomains[domain]['plugins']} \n {responseDomains[domain]['themes']} ")
-        #  bot.send_message(message.chat.id, "Порт" +" " + str(i) +" " + "открыт")
-        # print(f"Домен: {domain} \n {responseDomains[domain]['wordPress']}  \n {responseDomains[domain]['plugins']} \n {responseDomains[domain]['themes']} ")
-
-
-
-# print(responseDomains)
 
 
 bot.polling(non_stop = True)
